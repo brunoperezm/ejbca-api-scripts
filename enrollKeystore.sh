@@ -2,7 +2,7 @@ client_cert="/home/bruno/Downloads/superadmin.p12:Bitnami1234"
 
 hostname="localhost"
 
-json_payload='{"username":"bruno5","password":"abc123", "key_alg":"RSA", "key_spec":"2048"}'
+json_payload='{"username":"bruno6","password":"abc123", "key_alg":"RSA", "key_spec":"2048"}'
 
 echo $json_payload
 

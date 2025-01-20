@@ -18,20 +18,20 @@ ee_profile_name="LARYCEND"
 ca_name="ManagementCA"
 # This user will be created if it does not exist. The status of an existing
 # end entity will be set to NEW automatically.
-username="bruno4"
+username="germancito123"
 # If the user already exists, specify the enrollment code here
 enrollment_code="abc123"
 
 # 3. Adjust the variable $client_cert to point to a client certificate.
 
-client_cert="/home/bruno/Downloads/superadmin.p12:Bitnami1234"
+client_cert="/home/bruno/Downloads/new_superadmin.p12:Bitnami1234"
 
 
-email="bruno178pm@gmail.com"
+email="germancito@gmail.com"
 
-openssl req -new -out server.csr -newkey rsa:2048 \
-   -nodes -sha256 -keyout server.key \
-   -config csr.conf
+#openssl req -new -out server.csr -newkey rsa:2048 \
+#   -nodes -sha256 -keyout server.key \
+#   -config csr.conf
 
 csr=$(cat server.csr)
 template='{"certificate_request":$csr, "certificate_profile_name":$cp, "end_entity_profile_name":$eep, "certificate_authority_name":$ca, "username":$ee, "password":$pwd}'
@@ -43,8 +43,8 @@ json_payload=$(jq -n \
     --arg ee "$username" \
     --arg pwd "$enrollment_code" \
     "$template")
-echo $json_payload
-curl -X POST -k -v\
+#echo $json_payload
+curl -X POST -k\
     --cert-type P12 \
     --cert "$client_cert" \
     -H 'Content-Type: application/json' \

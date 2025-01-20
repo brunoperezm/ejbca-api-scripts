@@ -1,4 +1,4 @@
-client_cert="/home/bruno/Downloads/superadmin.p12:Bitnami1234"
+client_cert="/home/bruno/Downloads/new_superadmin.p12:Bitnami1234"
 
 hostname="localhost"
 
